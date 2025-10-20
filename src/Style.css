@@ -1,137 +1,220 @@
-
+/* =====================================================
+   Pastel Theme – Soft, Elegant & Modern
+   ===================================================== */
 
 * {
   box-sizing: border-box;
+  transition: all 0.25s ease;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: #f7f7f8;
-  color: #111111;
+  font-family: "Poppins", "Inter", sans-serif;
+  background: linear-gradient(135deg, #fdf2f8, #e0f2fe);
+  color: #374151;
+  min-height: 100vh;
 }
 
+/* ========== App Container ========== */
 .App {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 24px;
+  max-width: 750px;
+  margin: 60px auto;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* ========== Header Section ========== */
 header {
-  margin-bottom: 16px;
+  text-align: center;
+  margin-bottom: 32px;
 }
 
 header h1 {
-  margin: 0 0 4px 0;
-  font-size: 28px;
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #f472b6, #60a5fa);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header p {
-  margin: 0;
-  color: #555;
+  margin-top: 6px;
+  font-size: 16px;
+  color: #6b7280;
 }
 
+/* ========== Task Input Section ========== */
 .task-form {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 16px 0;
+  gap: 12px;
+  margin: 24px 0;
 }
 
 #inp {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex: 1;
-  padding: 8px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  padding: 12px 16px;
+  border: 1px solid #fce7f3;
+  border-radius: 12px;
   background: #ffffff;
+  box-shadow: 0 2px 6px rgba(240, 171, 252, 0.2);
 }
 
 #inp input {
   flex: 1;
-  border: 0;
-  outline: 0;
+  border: none;
+  outline: none;
   background: transparent;
-  font-size: 14px;
+  font-size: 15px;
+  color: #374151;
+}
+
+#inp input::placeholder {
+  color: #a1a1aa;
 }
 
 #inp button {
-  border: 0;
-  background: #111111;
+  border: none;
+  background: linear-gradient(90deg, #f9a8d4, #93c5fd);
   color: #ffffff;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 16px;
+  border-radius: 10px;
   cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(249, 168, 212, 0.4);
 }
 
+#inp button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 14px rgba(147, 197, 253, 0.4);
+}
+
+/* ========== Filter Buttons ========== */
 #btns {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 #btns select {
-  padding: 8px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  background: #ffffff;
+  padding: 10px 14px;
+  border: 1px solid #fce7f3;
+  border-radius: 10px;
+  background: #fffafa;
+  font-size: 14px;
+  cursor: pointer;
+  color: #4b5563;
+  box-shadow: 0 1px 4px rgba(240, 171, 252, 0.2);
 }
 
+#btns select:hover {
+  border-color: #f9a8d4;
+  box-shadow: 0 2px 6px rgba(249, 168, 212, 0.3);
+}
+
+/* ========== Task List ========== */
 .task-list {
   list-style: none;
   padding: 0;
-  margin: 16px 0;
+  margin: 24px 0;
 }
 
 .task-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  padding: 12px;
-  border: 1px solid #eeeeee;
-  border-radius: 8px;
+  gap: 10px;
+  padding: 16px 18px;
+  border: 1px solid #fae8ff;
+  border-radius: 12px;
   background: #ffffff;
+  box-shadow: 0 4px 10px rgba(240, 171, 252, 0.15);
+}
+
+.task-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(147, 197, 253, 0.2);
 }
 
 .task-list li.completed {
   text-decoration: line-through;
   opacity: 0.7;
+  background: linear-gradient(90deg, #fce7f3, #e0f2fe);
 }
 
+/* Buttons inside task items */
 .task-list button {
   background: none;
-  border: 0;
-  color: #047857;
+  border: none;
+  color: #f472b6;
   cursor: pointer;
-  padding: 6px 8px;
-  border-radius: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 500;
 }
 
+.task-list button:hover {
+  background: rgba(244, 114, 182, 0.15);
+  transform: scale(1.1);
+}
+
+/* ========== Progress Tracker ========== */
 .progress-tracker {
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 .progress-bar {
-  height: 8px;
-  background: #eeeeee;
+  height: 10px;
+  background: #f3e8ff;
   border-radius: 999px;
   overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .progress {
   height: 100%;
-  background: #16a34a;
+  background: linear-gradient(90deg, #f9a8d4, #93c5fd);
+  width: 0%;
+  transition: width 0.4s ease-in-out;
 }
 
+/* ========== Clear All Button ========== */
 .clear-btn {
-  margin-top: 16px;
-  background: #dc2626;
+  margin-top: 28px;
+  background: linear-gradient(90deg, #fb7185, #f472b6);
   color: #ffffff;
-  border: 0;
-  padding: 10px 14px;
-  border-radius: 6px;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
   cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.4);
+}
+
+.clear-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 16px rgba(251, 113, 133, 0.5);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  .App {
+    margin: 20px;
+    padding: 24px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  #inp button {
+    padding: 8px 12px;
+  }
 }
